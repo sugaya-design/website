@@ -1,0 +1,163 @@
+﻿@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+body {
+  color: #2b2a27;
+  font-family: "Helvetica Neue", "Arial", "Hiragino Sans", "Meiryo", sans-serif;
+}
+img {
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: #2b2a27;
+}
+
+
+
+/*-------------------------------------------
+Recipe
+-------------------------------------------*/
+
+.flex {
+	display: flex;
+	margin-bottom: 60px;
+}  
+
+.flex .image {
+	width: 50%;
+}
+
+/*
+高さは700pxで固定し、「object-fit: cover;」で
+高さを固定したまま画面幅にあわせて画像を拡大縮小させる。
+*/
+
+.flex .image  img {
+	width:100%;
+	height:700px;
+	object-fit: cover;
+	vertical-align: bottom;	
+}
+
+.flex .recipe {
+	width: 50%;
+	padding: 40px 5% 0 5%;
+}
+
+.flex .recipe .page-title {
+	font-size: 1.75rem;
+	margin-bottom: 20px;
+}
+
+.flex .recipe .content-title {
+	border-bottom: solid 1px #ccc;
+	font-size: 1.25rem;
+	padding-bottom: 5px;
+	margin: 40px 0 15px 0;
+}
+
+.flex .recipe .ingredient-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/*
+border-bottom　に　「dotted」　を指定して点線にする
+*/
+
+.flex .recipe .ingredient-list dt {
+	width: 85%;
+	border-bottom: dotted 1px #ccc;
+	padding: 6px 0;
+}
+
+.flex .recipe .ingredient-list dd {
+	width: 15%;
+	border-bottom: dotted 1px #ccc;
+	padding: 6px 0;
+	text-align: right;
+}
+
+.flex .recipe .step-list li {
+	border-bottom: dotted 1px #ccc;
+	padding: 6px 0;
+	margin-left: 20px;
+}
+
+
+
+/*------------------------------------------------------
+Button
+------------------------------------------------------*/
+
+.btn {
+	text-align: center;
+	margin-bottom: 80px;
+	}
+/*
+「display: inline-block;」でaタグに高さと幅を持たせる。
+paddingでボタンのサイズを調整
+*/
+
+.btn a {
+	display: inline-block;
+	border: solid 1px #2b2a27;
+	font-size: 0.875;
+	padding: 18px 60px;
+	text-decoration: none; 
+}
+
+
+/*------------------------------------------------------
+footer
+------------------------------------------------------*/
+
+#footer {
+	font-size: 0.75rem;
+	padding: 20px;
+	text-align: center;
+}
+#footer .sns {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+#footer .sns li {
+	margin: 0 10px;
+}
+
+
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width: 834px) {
+  /*-------------------------------------------
+  Recipe
+  -------------------------------------------*/
+   .flex {
+    flex-direction: column;
+  }
+  .flex .image {
+    width: 100%;
+  }
+
+	/*
+	画像の高さを固定していたのを解除する
+	*/
+	
+	.flex .image img {
+	height: auto;
+	}
+	
+	.flex .recipe {
+	width: 100%;
+	}
+	
+}	
+	
